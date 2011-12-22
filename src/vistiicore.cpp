@@ -5,15 +5,14 @@
  *      Author: noel
  */
 
-# include <json_spirit_reader.h>
-
-using namespace std;
-using namespace json_spirit;
+#include <boost/property_tree/json_parser.hpp>
+#include <boost/property_tree/ptree.hpp>
 
 void evaluate(char* json) {
-	const std::string& jsonString(json);
-	Value value;
-	read_or_throw(jsonString, value);
+	std::stringstream ss;
+	ss << json;
+	boost::property_tree::ptree pt;
+	boost::property_tree::json_parser::read_json(std::basic_istream<);
 }
 
 int main() {
